@@ -9,8 +9,8 @@
   <property name="nuget.location" value="tools/NuGet/NuGet.exe" />
 
   <property name="version.major" value="2" overwrite="false" />
-  <property name="version.minor" value="3" overwrite="false" />
-  <property name="version.revision" value="1" overwrite="false" />
+  <property name="version.minor" value="4" overwrite="false" />
+  <property name="version.revision" value="0" overwrite="false" />
   <property name="version.build" value="${environment::get-variable('BUILD_NUMBER')}" overwrite="false" if="${environment::variable-exists('BUILD_NUMBER')}" />
   <property name="version.build" value="0" overwrite="false" unless="${environment::variable-exists('BUILD_NUMBER')}" />
 
@@ -137,7 +137,8 @@
             <attribute type="AssemblyVersionAttribute" value="${version.major}.${version.minor}.${version.revision}.0" />
             <attribute type="AssemblyInformationalVersionAttribute" value="${version.major}.${version.minor}.${version.revision}.${version.build} / ${git.hash}" />
             <attribute type="AssemblyDelaySignAttribute" value="false" />
-            <attribute type="System.Security.AllowPartiallyTrustedCallersAttribute" if="${target.framework == '3.5'}" />
+            <attribute type="System.Security.AllowPartiallyTrustedCallersAttribute" />
+            <attribute type="System.Security.SecurityRulesAttribute" value="System.Security.SecurityRuleSet.Level1" asis="true" if="${target.framework != '3.5'}" />
         </attributes>
     </asminfo>  
   </target>
@@ -152,7 +153,7 @@
       define="${build.defines}"
       optimize="${build.optimize}"
       keyfile="${build.keyfile}"
-	  nostdlib="true" noconfig="true">
+      nostdlib="true" noconfig="true">
       <nowarn>
         <!-- do not report warnings for missing XML comments -->
         <warning number="0162" />
