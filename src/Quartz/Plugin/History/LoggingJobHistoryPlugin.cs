@@ -326,10 +326,10 @@ namespace Quartz.Plugin.History
         /// Called during creation of the <see cref="IScheduler" /> in order to give
         /// the <see cref="ISchedulerPlugin" /> a chance to Initialize.
         /// </summary>
-        public virtual void Initialize(string pluginName, IScheduler sched)
+        public virtual void Initialize(string pluginName, IScheduler scheduler)
         {
             name = pluginName;
-            sched.ListenerManager.AddJobListener(this, EverythingMatcher<JobKey>.AllJobs());
+            scheduler.ListenerManager.AddJobListener(this, EverythingMatcher<JobKey>.AllJobs());
         }
 
         /// <summary>

@@ -160,12 +160,12 @@ namespace Quartz.Plugin.Xml
         /// the <see cref="ISchedulerPlugin"/> a chance to initialize.
         /// </summary>
         /// <param name="pluginName">The name.</param>
-        /// <param name="sched">The scheduler.</param>
+        /// <param name="scheduler">The scheduler.</param>
         /// <throws>SchedulerConfigException </throws>
-        public virtual void Initialize(string pluginName, IScheduler sched)
+        public virtual void Initialize(string pluginName, IScheduler scheduler)
         {
             name = pluginName;
-            scheduler = sched;
+            this.scheduler = scheduler;
             typeLoadHelper = new SimpleTypeLoadHelper();
             typeLoadHelper.Initialize();
 

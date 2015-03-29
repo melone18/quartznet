@@ -1,6 +1,10 @@
 using System;
+using System.Collections.Specialized;
+
 using log4net;
 using Quartz.Impl;
+using Quartz.Web;
+
 using Topshelf;
 
 namespace Quartz.Server

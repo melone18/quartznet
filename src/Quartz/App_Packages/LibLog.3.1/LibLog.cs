@@ -891,14 +891,14 @@ namespace Quartz.Logging.LogProviders
                 switch (logLevel)
                 {
                     case LogLevel.Info:
-                        if (_logger.IsInfoEnabled())
+                        if (_logger.IsInfoEnabled)
                         {
                             _logger.Info(messageFunc());
                             return true;
                         }
                         break;
                     case LogLevel.Warn:
-                        if (_logger.IsWarnEnabled())
+                        if (_logger.IsWarnEnabled)
                         {
                             _logger.Warn(messageFunc());
                             return true;

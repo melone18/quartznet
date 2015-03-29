@@ -1,0 +1,22 @@
+<template>
+    <h2>${heading}</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr repeat.for="scheduler of schedulers">
+                <td>${scheduler.id}</td>
+                <td>${scheduler.name}</td>
+                <td>${scheduler.status}</td>
+                <td><button click.delegate="$parent.openDetails(scheduler)">View Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+</template>

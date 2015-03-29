@@ -161,7 +161,7 @@ namespace Quartz.Impl
         /// StdSchedulerFactory instance.).
         /// </para>
         /// </summary>
-        public virtual ICollection<IScheduler> AllSchedulers
+        public virtual IReadOnlyList<IScheduler> AllSchedulers
         {
             get { return SchedulerRepository.Instance.LookupAll(); }
         }

@@ -36,7 +36,7 @@ namespace Quartz
 		/// Returns handles to all known Schedulers (made by any SchedulerFactory
 		/// within this app domain.).
 		/// </summary>
-		ICollection<IScheduler> AllSchedulers { get; }
+		IReadOnlyList<IScheduler> AllSchedulers { get; }
 
 		/// <summary>
 		/// Returns a client-usable handle to a <see cref="IScheduler" />.
